@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load staticfiles %} <!-- New line -->
+<html>
+    <head>
+        <title>Travel Diary</title>
+    </head>
+
+    <body>
+        <h1>Welcome </h1>
+         <strong>{{ boldmessage }}</strong><br />
+        <a href="/Beaches/beaches/">Food</a><br />
+        <img src="{% static "images/food.jpg" %}" alt="Food" />
+    </body>
+</html>
