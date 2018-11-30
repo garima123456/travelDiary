@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Travel Diary</title>
-    </head>
-
-    <body>
+{% extends 'base.html' %}
+{% block body_block %}
         <h1>Add a Page</h1>
 
         <form id="page_form" method="post" action="/beaches/category/{{ category_name_slug}}/add_page/">
@@ -23,8 +18,6 @@
 
             <input type="submit" name="submit" value="Create Page" />
         </form>
-    </body>
-
-</html>
+{% endblock %}
 
 

@@ -10,7 +10,8 @@ if not settings.DEBUG:
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^beaches/', include('beaches.urls')),
-    url(r'^food/', include('food.urls')))
+    url(r'^food/', include('food.urls')),
+    url(r'^accounts/', include('registration.backends.simple.urls')),)
 if settings.DEBUG:
     urlpatterns += patterns(
         'django.views.static',

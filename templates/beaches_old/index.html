@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %} <!-- New line -->
+<html>
+    <head>
+        <title>Travel Diary</title>
+    </head>
+
+    <body>
+        {% if user.is_authenticated %}
+        <h1>Welcome {{user.username}}! </h1>
+        <a href="/beaches/restricted/">Restricted Page</a><br />
+        <a href="/beaches/logout/">Logout</a><br />
+        {% else %}
+        <h1>Welcome travel lovers</h1>
+        <a href="/beaches/register/">Register Here</a><br />
+<a href="/beaches/login/">Login</a><br />
+        {% endif %}
+        {% if categories %}
+          <ul>
+            {% for category in categories %}
+             <li><a href="/beaches/category/{{ category.slug }}">{{ category.name }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <strong> There are no categories present</strong>
+         {% endif %}
+         <strong>{{ boldmessage }}</strong><br />
+        <a href="/beaches/add_category">More</a><br />
+        <img src="{% static "images/beach.jpg" %}" alt="Locations" />
+        <img src="{% static "images/food.jpg" %}" alt="Food" />
+    </body>
+</html>

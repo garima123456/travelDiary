@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-{% load staticfiles %} <!-- New line -->
-<html>
-    <head>
-        <title>Travel Diary</title>
-    </head>
+{% extends 'base.html' %}
 
-    <body>
-        <h1>Welcome Travel lovers </h1>
 
+
+{% block body_block %}
+        <h1>Welcome travel lovers </h1>
+        <strong>visits:{{ visits }}</strong><br />
         {% if categories %}
+           
           <ul>
             {% for category in categories %}
              <li><a href="/beaches/category/{{ category.slug }}">{{ category.name }}</a></li>
+             <!--li><a href="{ % url 'category' category.slug %}">{{ category.name }}</a></li-->
             {% endfor %}
           </ul>
         {% else %}
           <strong> There are no categories present</strong>
          {% endif %}
+         
          <strong>{{ boldmessage }}</strong><br />
-        <a href="/beaches/add_category">More</a><br />
-        <img src="{% static "images/beach.jpg" %}" alt="Locations" />
-        <img src="{% static "images/food.jpg" %}" alt="Food" />
-    </body>
-</html>
+{% endblock %}
+
