@@ -22,6 +22,7 @@ TEMPLATE_DIRS = (TEMPLATE_PATH,)
 SECRET_KEY = 'lc^(boi6n#4a@qlrb0=kihsgaw(()@l@w)l^j@698p**r+gc$g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# 123456
 # Settings.py
 DEBUG = True
 
